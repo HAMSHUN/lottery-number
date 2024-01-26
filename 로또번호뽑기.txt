@@ -1,0 +1,28 @@
+로또번호뽑기
+실행결과 :
+**로또 추첨을 시작합니다. **
+오늘의 로또 번호 ==> 2,3,23,34,35,32 // 임의의 숫자들"""
+
+import random
+
+def numpick() :
+    lottonum = random.randint(1,45)
+    return lottonum
+
+lotto = []
+num = 0
+while True :
+    num = numpick()
+
+    if num in lotto:
+        continue
+    else :
+        lotto.append(num)
+
+    if len(lotto) == 6 :
+        break
+
+print("오늘의 로또 번호==> ", end="")
+lotto.sort()
+for i in range (0,6):
+    print(lotto[i], "", end="")
